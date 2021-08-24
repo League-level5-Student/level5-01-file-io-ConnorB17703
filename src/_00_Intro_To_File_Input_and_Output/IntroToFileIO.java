@@ -10,6 +10,8 @@ import javax.swing.JFileChooser;
 public class IntroToFileIO {
 	public static void main(String[] args) {
 		
+		//***START THIS***
+		
 		//Read from a file one character at a time
 		try {
 			FileReader fr = new FileReader("src/_00_Intro_To_File_Input_and_Output/test.txt");
