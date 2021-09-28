@@ -2,9 +2,15 @@ package _03_To_Do_List;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -94,9 +100,43 @@ public class ToDoList implements ActionListener{
 		}
 		if(arg0.getSource() == button4){
 			//copy all elements in arraylist and write them into file
+			try{
+			FileWriter fw = new FileWriter("tasks.txt");
+			for(int i = 0; i<tasks.size(); i++){
+				fw.write(tasks.get(i));
+				fw.write("\n");
+			}
+			fw.close();
+			
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+			
 		}
 		if(arg0.getSource() == button5){
 			//use jfilechooser to choose and intialize new arraylist member variable
+			JFileChooser jfc = new JFileChooser();
+			String fileName = "";
+			int returnval = jfc.showOpenDialog(null);
+			if(returnval == JFileChooser.APPROVE_OPTION){
+				fileName = jfc.getSelectedFile().getAbsolutePath();
+			}
+			
+			try{
+			BufferedReader br = new BufferedReader(new FileReader(fileName));
+			String line = br.readLine();
+			while(line != null){
+				tasks.add(line);
+				line = br.readLine();
+			}
+			
+			br.close();
+			}catch(FileNotFoundException e1){
+				e1.printStackTrace();
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+			
 	}
 	}
 }

@@ -29,5 +29,15 @@ public class DirectoryIterator {
 		 * Be aware of possible directories inside of directories.
 		 * (e.g //Copyright © 2019 FirstName LastName)
 		 */
+		
+		JFileChooser jfc2 = new JFileChooser();
+		jfc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		int returnVal2 = jfc2.showOpenDialog(null);
+		
+		
+		//***YOU LEFT OFF HERE***
+		//itrate through src folder and check if files with .java to add statment
+		
+		
 	}
 }
