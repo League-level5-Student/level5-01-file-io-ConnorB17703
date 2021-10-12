@@ -55,7 +55,8 @@ public class DirectoryIterator {
 							try{
 								FileWriter fw = new FileWriter(jP.getAbsolutePath(), true);
 								
-								//****FINISH WRITING CODE TO WRITE STUFF IN THE FILES****
+								fw.write("\n//Copyright © 2021 Jetsapon Bansasine");
+								fw.close();
 								
 							}catch(IOException e){
 								e.printStackTrace();
@@ -74,3 +75,5 @@ public class DirectoryIterator {
 		
 	}
 }
+
+//Copyright © 2021 Jetsapon Bansasine

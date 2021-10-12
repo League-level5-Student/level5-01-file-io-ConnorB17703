@@ -73,3 +73,5 @@ public class FileDecryptor {
 	
 }
 }
+
+//Copyright © 2021 Jetsapon Bansasine

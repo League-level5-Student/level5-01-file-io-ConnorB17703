@@ -1,12 +1,12 @@
 package _05_Serialization;
 
-
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.io.*;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+
+
 
 
 
@@ -46,6 +46,7 @@ public class Serialization {
 	private static void save(MinecraftCreeper data) {
 		try (FileOutputStream fos = new FileOutputStream(new File(DATA_FILE)); ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 			oos.writeObject(data);
+			oos.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -65,3 +66,5 @@ public class Serialization {
 		}
 	}
 }
+
+//Copyright © 2021 Jetsapon Bansasine
